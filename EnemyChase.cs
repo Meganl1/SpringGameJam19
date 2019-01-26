@@ -11,11 +11,13 @@ public class EnemyChase : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		target = GameObject.FindGameObjectWithTag("Player").
+		target = GameObject.FindGameObjectWithTag("Player")
 	}
 
 	// Update is called once per frame
 	void Update () {
-
+		if(Vector2.Distance(transform.position, target.position) > stoppingDistance) {
+			transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+		}
 	}
 }
