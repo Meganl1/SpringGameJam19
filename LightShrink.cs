@@ -17,6 +17,10 @@ Light lt;
 	// Update is called once per frame
 	void Update () {
 		lt.range -= decreaseRate/1000;
+    if(lt.range == 0)
+    {
+      Destroy(transform.parent.gameObject);
+    }
 	}
 
   void OnTriggerStay2D(Collider2D collider)
@@ -28,4 +32,14 @@ Light lt;
       Range = originalRange;
 		}
 	}
+
+  void OnTriggerEnter2D(Collider2D collider)
+  {
+    if(collider.gameObject.tag == "Memer")
+    {
+      lt.range -= 3;
+    }
+  }
+
+
 }
