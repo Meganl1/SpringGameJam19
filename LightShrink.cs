@@ -19,11 +19,12 @@ Light lt;
 		lt.range -= decreaseRate/1000;
 	}
 
-  void OnTriggerEnter(Collider other)
+  void OnTriggerStay2D(Collider2D collider)
 	{
-		if (other.CompareTag("Home"))
-		{
-			lt.range = 15;
+		 if(collider.gameObject.tag == "Home")
+		 {
+      //Destroy(gameObject);
+			lt.range = originalRange;
       Range = originalRange;
 		}
 	}
