@@ -31,15 +31,20 @@ Light lt;
 			lt.range = originalRange;
       Range = originalRange;
 		}
-	}
 
-  void OnTriggerEnter2D(Collider2D collider)
-  {
     if(collider.gameObject.tag == "Memer")
     {
-      lt.range -= 3;
+      lt.range -= decreaseRate/500;
     }
-  }
+	}
+
+//  void OnTriggerStay2D(Collider2D collider)
+//  {
+//    if(collider.gameObject.tag == "Memer")
+//    {
+//      lt.range -= decreaseRate/500;
+//    }
+//  }
 
 
 }
